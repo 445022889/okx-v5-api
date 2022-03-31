@@ -1,0 +1,9 @@
+{
+  "name": "okx-api-v5",
+  "version": "1.0.7",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "axios-https-proxy-fix": "^0.17.1"
+  }
+}

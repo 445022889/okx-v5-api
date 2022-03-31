@@ -5,6 +5,18 @@
 ![GitHub license](https://img.shields.io/github/license/445022889/okx-v5-api-nodejs?style=flat)
 ![GitHub stars](https://img.shields.io/github/stars/445022889/okx-v5-api-nodejs?color=fa6470&style=flat)
 ![GitHub forks](https://img.shields.io/github/forks/445022889/okx-v5-api-nodejs?style=flat)
+![Last Commit](https://badgen.net/github/last-commit/445022889/okx-v5-api-nodejs?scale=2&label=🟣%20Updated&labelColor=black&color=448AFF&cache=9999)
+#### 完成情况
+
+- [ ] 交易
+- [ ] 资金
+- [ ] 闪兑
+- [ ] 账户
+- [ ] 子账户
+- [ ] 行情数据
+- [x] 公共数据
+- [x] 交易大数据
+- [x] Status
 
 #### 引入使用
 
@@ -199,4 +211,93 @@ console.info(await api.get_api_v5_public_underlying({}));
 
 ```javascript
 console.info(await api.get_api_v5_public_insuranceFund({instType: ""}));
+```
+
+## 交易大数据
+
+### 获取交易大数据支持币种
+
+#### GET /api/v5/rubik/stat/trading-data/support-coin
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_tradingData_supportCoin({}));
+```
+
+### 获取主动买入/卖出情况
+
+#### GET /api/v5/rubik/stat/taker-volume
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_takerVolume({ccy: "", instType: "", begin: "", end: "", period: ""}));
+```
+
+### 获取杠杆多空比
+
+#### GET /api/v5/rubik/stat/margin/loan-ratio
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_margin_loanRatio({ccy: "", begin: "", end: "", period: ""}));
+```
+
+### 获取合约多空持仓人数比
+
+#### GET /api/v5/rubik/stat/contracts/long-short-account-ratio
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_contracts_longShortAccountRatio({
+    ccy: "",
+    begin: "",
+    end: "",
+    period: ""
+}));
+```
+
+### 获取合约持仓量及交易量
+
+#### GET /api/v5/rubik/stat/contracts/open-interest-volume
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_contracts_openInterestVolume({ccy: "", begin: "", end: "", period: ""}));
+```
+
+### 看涨/看跌期权合约 持仓总量比/交易总量比
+
+#### GET /api/v5/rubik/stat/option/open-interest-volume-ratio
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_option_openInterestVolumeRate({ccy: "", period: ""}));
+```
+
+### 看涨看跌持仓总量及交易总量（按到期日分）
+
+#### GET /api/v5/rubik/stat/option/open-interest-volume-expiry
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_option_openInterestVolumeExpiry({ccy: "", period: ""}));
+```
+
+### 看涨看跌持仓总量及交易总量（按执行价格分）
+
+#### GET /api/v5/rubik/stat/option/open-interest-volume-strike
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_option_openInterestVolumeStrike({ccy: "", expTime: "", period: ""}));
+```
+
+### 看跌/看涨期权合约 主动买入/卖出量
+
+#### GET /api/v5/rubik/stat/option/taker-block-volume
+
+```javascript
+console.info(await api.get_api_v5_rubik_stat_option_takerBlockVolume({ccy: "", period: ""}));
+```
+
+## Status
+
+### Status
+
+#### GET /api/v5/system/status
+
+```javascript
+console.info(await api.get_api_v5_system_status({}));
 ```
